@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules
+
+# Bundling
+.cache
+dist
+
+# Editor
+.vscode

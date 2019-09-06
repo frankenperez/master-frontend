@@ -1,0 +1,17 @@
+@mixin bg-color-brightness($color, $brightness: null){
+    @if $brightness == null {
+        .base {
+            background-color: $color;
+        }
+    } @else {
+        @for $i from 1 through 4 {
+            .#{$brightness}-#{$i} {
+                @if $brightness == "darken" {
+                    background-color: darken($color, percentage($i / 10));
+                } @else {
+                    background-color: lighten($color, percentage($i / 10));
+                }
+            }
+        }
+    }
+}
