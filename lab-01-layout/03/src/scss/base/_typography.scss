@@ -1,0 +1,9 @@
+// Font Family
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+$base-font-family: "Open Sans", sans-serif !default;
+
+body {
+  font-family: $base-font-family;
+  font-size: $m-size;
+  color: $text-color;
+}

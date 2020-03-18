@@ -1,0 +1,64 @@
+.nav {
+  width: 100%;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  li {
+    padding: $s-size;
+    line-height: $l-size;
+  }
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  // Main Navigation
+  &.nav--main {
+    background: $main-color;
+    font-size: $m-size;
+
+    ul {
+      justify-content: space-between;
+    }
+
+    a {
+      font-weight: bold;
+      color: $white-color;
+    }
+  }
+
+  // Secondary Navigation
+  &.nav--secondary {
+    position: fixed;
+    bottom: 0;
+    background-color: $gray-color;
+    text-transform: uppercase;
+    font-size: $s-size;
+
+    li {
+      flex: 1;
+      padding: $xs-size $xxs-size;
+    }
+
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: $white-color;
+    }
+
+    @media screen and (min-width: $breakpoint-width) {
+      position: relative;
+      bottom: unset;
+    }
+  }
+}
