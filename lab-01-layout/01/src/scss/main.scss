@@ -2,47 +2,47 @@
 @import "color";
 
 .main-title {
-    margin: 1rem;
-    font-family: sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    color: #333;
+  margin: 1rem;
+  font-family: sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  color: #333;
 }
 
 .container {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  display: grid;
+  row-gap: 2rem;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  padding: 1rem;
+
+  div[class$="-schema"] {
     display: grid;
-    row-gap: 2rem;
-    width: 100%;
-    height: calc(100vh - 4rem);
-    padding: 1rem;
+    grid-template-columns: repeat(9, 1fr);
+    column-gap: 0.5rem;
+    color: white;
 
-    div[class$="-schema"] {
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        column-gap: 0.5rem;
-        color: white;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
-        >div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-
-    div[class="red-schema"] {
-        @include bg-color-brightness(red, "darken");
-        @include bg-color-brightness(red);
-        @include bg-color-brightness(red, "lighten");
-    }
-    div[class="green-schema"] {
-        @include bg-color-brightness(lime, "darken");
-        @include bg-color-brightness(lime);
-        @include bg-color-brightness(lime, "lighten");
-    }
-    div[class="blue-schema"] {
-        @include bg-color-brightness(blue, "darken");
-        @include bg-color-brightness(blue);
-        @include bg-color-brightness(blue, "lighten");
-    }
+  div[class="red-schema"] {
+    @include bg-color-brightness(red, "darken");
+    @include bg-color-brightness(red);
+    @include bg-color-brightness(red, "lighten");
+  }
+  div[class="green-schema"] {
+    @include bg-color-brightness(lime, "darken");
+    @include bg-color-brightness(lime);
+    @include bg-color-brightness(lime, "lighten");
+  }
+  div[class="blue-schema"] {
+    @include bg-color-brightness(blue, "darken");
+    @include bg-color-brightness(blue);
+    @include bg-color-brightness(blue, "lighten");
+  }
 }
