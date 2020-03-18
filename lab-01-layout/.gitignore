@@ -1,9 +1,9 @@
 # Dependency directories
-node_modules
+node_modules/
 
 # Bundling
-.cache
-dist
+.cache/
+dist/
 
 # Editor
 .vscode

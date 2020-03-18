@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Module 01 - Layout",
   "scripts": {
-    "start:01": "parcel ./ex-01/exercise-01.html --open"
+    "start:01": "parcel ./01/exercise-01.html --open",
+    "start:02": "parcel ./02/exercise-02.html --open",
+    "start:03": "parcel ./03/exercise-03.html --open",
+    "start:04": "parcel ./04/exercise-04.html --open"
   },
   "repository": {
     "type": "git",
@@ -23,8 +26,8 @@
   "homepage": "https://github.com/frankenperez/master-frontend/lab-01-layout/#readme",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.12.0",
-    "parcel": "^1.12.3",
-    "sass": "^1.23.0-module.beta.1"
+    "node-sass": "^4.13.1",
+    "parcel": "^1.12.4",
+    "sass": "^1.26.3"
   }
 }
