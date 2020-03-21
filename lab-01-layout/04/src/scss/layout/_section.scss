@@ -1,0 +1,10 @@
+.section {
+  padding: $m-size;
+
+  &.section-a {
+    background-color: $comp-color;
+  }
+  &.section-b {
+    background-color: $alt-color;
+  }
+}

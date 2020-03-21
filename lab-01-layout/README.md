@@ -22,6 +22,6 @@ Run `npm run start:03`
 
 ## Exercise 04 - Grid
 
-Layout Shifter pattern implementation using media queries, relative units, CSS Grid and the Sass 7-1 architecture pattern.
+Layout Shifter pattern implementation using media queries with Sass maps, function to get relative units, CSS Grid and the Sass 7-1 architecture pattern.
 
 Run `npm run start:04`

@@ -1,0 +1,44 @@
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px,
+  "x-large": 1220px
+) !default;
+
+/// Font sizes
+$s-font-size: 12px !default;
+$m-font-size: 16px !default;
+$l-font-size: 20px !default;
+$xl-font-size: 24px !default;
+
+/// Spacing sizes
+/// @type Length
+$xxs-size: 0.25rem !default;
+$xs-size: 0.5rem !default;
+$s-size: 0.75rem !default;
+$m-size: 1rem !default;
+$l-size: 1.25rem !default;
+$xl-size: 1.5rem !default;
+$xxl-size: 2rem !default;
+
+/// Wrapper maximum width
+/// @type Length
+$wrapper-width: 1220px;
+
+/// Default colors
+/// @type Color
+$blue: #20639b !default;
+$green: #3caea3 !default;
+$red: #ed553b !default;
+$darkblue: #173f5f !default;
+$yellow: #f6d55c !default;
+$white: #ccffff;
+
+$main-color: $blue;
+$comp-color: $yellow;
+$alt-color: $green;
+$enf-color: $red;
+$text-color: $darkblue;

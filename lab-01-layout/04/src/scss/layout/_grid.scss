@@ -1,0 +1,39 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  max-width: $wrapper-width;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "section-a"
+    "section-b";
+  grid-template-rows: auto 1fr 1fr;
+
+  .header {
+    grid-area: header;
+  }
+
+  .section-a {
+    grid-area: section-a;
+  }
+
+  .section-b {
+    grid-area: section-b;
+  }
+
+  @include breakpoint("medium") {
+    grid-template-rows: 0.5fr 1fr 1fr;
+  }
+
+  @include breakpoint("large") {
+    grid-template-areas:
+      "header section-a"
+      "header section-b";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}

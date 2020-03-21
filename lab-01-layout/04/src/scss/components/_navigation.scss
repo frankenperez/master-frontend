@@ -1,0 +1,36 @@
+.nav {
+  height: 100%;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+  }
+
+  li {
+    flex-grow: 0;
+    flex-basis: auto;
+    padding: 0 1rem;
+  }
+
+  a {
+    color: $white;
+  }
+
+  @include breakpoint("medium") {
+    ul {
+      justify-content: space-around;
+    }
+  }
+
+  @include breakpoint("large") {
+    ul {
+      flex-direction: column;
+    }
+  }
+}
