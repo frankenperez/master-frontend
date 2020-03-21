@@ -1,0 +1,20 @@
+// Set up a decent box model on the root element
+html {
+  box-sizing: border-box;
+}
+
+// Make all elements from the DOM inherit from the parent box-sizing
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.content-wrapper {
+  max-width: $wrapper-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $l-size;
+  padding-right: $l-size;
+  width: 100%;
+}

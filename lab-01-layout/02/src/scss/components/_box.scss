@@ -1,0 +1,28 @@
+.box {
+  width: 200px;
+  height: 100px;
+  margin: $s-size;
+  padding: $s-size;
+  border: $border;
+  border-radius: $border-radius;
+  color: getColor("text");
+
+  &.box--main {
+    background-color: getColor("main");
+    color: getColor("text");
+  }
+
+  &.box--important {
+    background-color: getColor("important");
+    color: getColor("inverse");
+  }
+
+  &.box--warning {
+    background-color: getColor("warning");
+    color: getColor("text");
+  }
+
+  &.box--shadow {
+    box-shadow: $box-shadow;
+  }
+}

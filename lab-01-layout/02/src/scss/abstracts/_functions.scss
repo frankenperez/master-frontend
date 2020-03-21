@@ -1,0 +1,16 @@
+/// Themify mixin
+/// @access private
+/// @param {String} $property - Property to themify
+/// @param {String} $color - Key color to use from theme
+/// @param {Map} $theme [$themes] - Map of theme-colors to use
+@function getColor($color, $theme: $theme-colors) {
+  // If the key exists in the theme-colors map
+  @if map-has-key($theme, $color) {
+    @return map-get($theme, $color);
+  }
+  // If the key doesn't exist in the map shows a warning
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$color}`. "
+        + "Please make sure it is defined in your `$theme-colors` map.";
+  }
+}

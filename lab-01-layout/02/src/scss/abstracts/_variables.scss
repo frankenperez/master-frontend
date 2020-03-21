@@ -1,0 +1,33 @@
+// Sizes - Font and Spacing
+$xxs-size: 0.25rem !default;
+$xs-size: 0.5rem !default;
+$s-size: 0.75rem !default;
+$m-size: 1rem !default;
+$l-size: 1.25rem !default;
+$xl-size: 1.5rem !default;
+$xxl-size: 2rem !default;
+
+// Wrapper max size
+$wrapper-width: 1220;
+
+// Colors
+$theme-colors: (
+  "main": #496491,
+  "important": #85a5cc,
+  "warning": #ea6044,
+  "text": #333,
+  "inverse": #ddd,
+  "alt": #ccc
+) !default;
+
+// Border
+$border-width: 1px !default;
+$border-style: solid !default;
+$border-color: #ccc !default;
+$border-radius: $xxs-size !default;
+$border: $border-width $border-style $border-color !default;
+
+// Box shadow
+$box-shadow-color: #ccc !default;
+$box-shadow-position: 0 0 $xl-size !default;
+$box-shadow: $box-shadow-position $box-shadow-color !default;

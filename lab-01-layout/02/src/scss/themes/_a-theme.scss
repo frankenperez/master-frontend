@@ -1,0 +1,29 @@
+/// Theme Colors
+/// @prop {String} keys - Keys are identifiers mapped to a given colour
+/// @prop {Map} values - Values are actual colours expressed in hexadecimal
+$theme-colors: (
+  "main": #b80d57,
+  "important": #721b65,
+  "warning": #f8615a,
+  "text": #333,
+  "inverse": #ddd,
+  "alt": #ccc
+);
+
+// Theme Font
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap");
+$main-font-family: "IBM Plex Sans", sans-serif;
+$secondary-font-family: "IBM Plex Serif", serif;
+
+// Border
+$border-width: 1px;
+$border-style: solid;
+$border-color: getColor("alt");
+$border-radius: $xxs-size;
+$border: $border-width $border-style $border-color;
+
+// Box shadow
+$box-shadow-color: getColor("alt");
+$box-shadow-position: -($xs-size) $xs-size $xxs-size;
+$box-shadow: $box-shadow-position $box-shadow-color;

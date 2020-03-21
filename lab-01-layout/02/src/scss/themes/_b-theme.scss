@@ -1,0 +1,30 @@
+/// Theme Colors
+/// @prop {String} keys - Keys are identifiers mapped to a given colour
+/// @prop {Map} values - Values are actual colours expressed in hexadecimal
+$theme-colors: (
+  "main": #0a91ab,
+  "important": #065471,
+  "warning": #81d0ee,
+  "text": #222,
+  "inverse": #ddd,
+  "alt": #deeef0
+);
+
+// Theme Font
+// Theme Font
+@import url("https://fonts.googleapis.com/css?family=PT+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans&display=swap");
+$main-font-family: "PT Serif", serif;
+$secondary-font-family: "PT Sans", sans-serif;
+
+// Border
+$border-width: 1px;
+$border-style: solid;
+$border-color: getColor("main");
+$border-radius: $xxs-size;
+$border: $border-width $border-style $border-color;
+
+// Box shadow
+$box-shadow-color: getColor("alt");
+$box-shadow-position: $s-size $s-size $xxs-size;
+$box-shadow: $box-shadow-position $box-shadow-color;
