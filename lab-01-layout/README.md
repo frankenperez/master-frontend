@@ -10,7 +10,7 @@ Run `npm run start:01`
 
 ## Exercise 02 - Themes
 
-Project to generate two sample themes using Sass variables and the Sass 7-1 architecture pattern.
+Project to use two sample themes with Sass variables and functions and the Sass 7-1 architecture pattern.
 
 Run `npm run start:02`
 
