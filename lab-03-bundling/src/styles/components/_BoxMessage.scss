@@ -1,0 +1,19 @@
+.box-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 1px solid $light-gray;
+  border-radius: $xs-size;
+  padding: $s-size;
+  color: $denim;
+  background-color: $concrete;
+}
+
+.box-message__image {
+  max-width: 120px;
+  filter: opacity(0.5);
+}
+
+.box-message__body {
+  padding-left: $m-size;
+}

@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: $l-size;
+  background: linear-gradient(-25deg, $fiord, $denim);
+  color: $white;
+}
