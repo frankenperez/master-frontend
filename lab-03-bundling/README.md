@@ -6,12 +6,15 @@ The proyect includes the following features:
 
 - Webpack
 - Webpack Dev Server
-- Sass and CSS modules
+- Sass
 - Typescript
 - React
-- Image loading
+- ESLint
+- Aliases
+- Image loading: html-loader, url-loader and svg-url-loader
 - Environment configuration: Development, Production and Performance
 - Environment variables: Development and Production
+- Gzip compression
 - Webpack Bundle Analyzer
 
 ## Available scripts

@@ -9,7 +9,11 @@
     "sourceMap": true,
     "noLib": false,
     "suppressImplicitAnyIndexErrors": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "AppComponents": ["src/components"]
+    }
   },
   "compileOnSave": false,
   "exclude": ["node_modules"]
