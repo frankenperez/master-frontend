@@ -9,7 +9,10 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts", ".tsx"]
   },
-  entry: ["./main.tsx"],
+  entry: {
+    app: ["./main.tsx"],
+    styles: ["./styles/main.scss"]
+  },
   output: {
     path: path.join(basePath, "dist"),
     filename: "[name].js"
@@ -24,13 +27,27 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         loader: "awesome-typescript-loader",
         options: {
           useBabel: true,
           babelCore: "@babel/core" // needed for Babel v7
         }
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("sass")
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
