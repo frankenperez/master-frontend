@@ -1,9 +1,9 @@
-import { MemberEntity, createDefaultMemberEntity } from "../model/member";
+import { MemberEntity, createDefaultMemberEntity } from "./member";
 
 class MemberAPI {
   // Just return a copy of the mock data
   getAllMembers(organizationName: string): Promise<MemberEntity[]> {
-    const gitHubMembersUrl: string = `https://api.github.com/orgs/${organizationName}/members`;
+    const gitHubMembersUrl = `https://api.github.com/orgs/${organizationName}/members`;
 
     return fetch(gitHubMembersUrl)
       .then(response => this.checkStatus(response))
@@ -15,7 +15,7 @@ class MemberAPI {
     if (response.status >= 200 && response.status < 300) {
       return Promise.resolve(response);
     } else {
-      let error = new Error(response.statusText);
+      const error = new Error(response.statusText);
       throw error;
     }
   }
@@ -26,11 +26,11 @@ class MemberAPI {
 
   private resolveMembers(data: any): Promise<MemberEntity[]> {
     const members = data.map(gitHubMember => {
-      var member: MemberEntity = createDefaultMemberEntity();
+      const member: MemberEntity = createDefaultMemberEntity();
 
       member.id = gitHubMember.id;
       member.login = gitHubMember.login;
-      member.avatar_url = gitHubMember.avatar_url;
+      member.avatarUrl = gitHubMember.avataUrl;
 
       return member;
     });

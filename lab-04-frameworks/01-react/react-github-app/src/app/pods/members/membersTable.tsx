@@ -1,12 +1,10 @@
 import * as React from "react";
-import { MemberEntity } from "../../model/member";
-import { memberAPI } from "../../api/memberAPI";
+import { MemberEntity } from "./member";
+import { memberAPI } from "./memberAPI";
 import { MemberRow } from "./memberRow";
 import { MemberHead } from "./memberHead";
 
-interface Props {}
-
-export const MembersTableComponent = (props: Props) => {
+export const MembersTableComponent = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
   const loadMembers = () => {

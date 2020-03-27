@@ -11,7 +11,13 @@
     "allowJs": true,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "app-common": ["src/app/common"],
+      "app-pods": ["src/app/pods"],
+      "app-scenes": ["src/app/scenes"]
+    }
   },
-  "include": ["./src/**/*"]
+  "exclude": ["node_modules"]
 }

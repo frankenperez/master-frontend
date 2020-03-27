@@ -1,13 +1,18 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
 
+const path = require("path");
 const basePath = __dirname;
 
 module.exports = {
   mode: "development",
   context: path.join(basePath, "src"),
   resolve: {
-    extensions: [".js", ".ts", ".tsx"]
+    extensions: [".js", ".ts", ".tsx"],
+    alias: {
+      "app-common": path.join(basePath, "src/app/common"),
+      "app-pods": path.join(basePath, "src/app/pods"),
+      "app-scenes": path.join(basePath, "src/app/scenes")
+    }
   },
   entry: {
     app: ["./main.tsx"],
@@ -27,13 +32,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        loader: "awesome-typescript-loader",
-        options: {
-          useBabel: true,
-          babelCore: "@babel/core" // needed for Babel v7
-        }
+        enforce: "pre",
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
       },
       {
         test: /\.scss$/,
