@@ -2,4 +2,4 @@
 
 ## 01 - React
 
-- [React - GitHub App](./react-github-app/) _Work in progress_
+- [React - GitHub App](./01-react/react-github-app/) _Work in progress_

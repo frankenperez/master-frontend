@@ -10,6 +10,7 @@ module.exports = {
     extensions: [".js", ".ts", ".tsx"],
     alias: {
       "app-common": path.join(basePath, "src/app/common"),
+      "app-layout": path.join(basePath, "src/app/layout"),
       "app-pods": path.join(basePath, "src/app/pods"),
       "app-scenes": path.join(basePath, "src/app/scenes")
     }

@@ -15,6 +15,7 @@
     "baseUrl": ".",
     "paths": {
       "app-common": ["src/app/common"],
+      "app-layout": ["src/app/layout"],
       "app-pods": ["src/app/pods"],
       "app-scenes": ["src/app/scenes"]
     }
