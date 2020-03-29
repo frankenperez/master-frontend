@@ -1,14 +1,13 @@
 import * as React from "react";
 import { Container, Header, Footer } from "app-layout";
-import { MembersTableComponent } from "app-pods";
-import { SearchForm } from "app-common";
+import { MemberList, MemberSearch } from "app-pods";
 
 export const HomePage = () => (
   <>
     <Header />
     <Container className="content-wrapper">
-      <SearchForm />
-      <MembersTableComponent />
+      <MemberSearch />
+      <MemberList />
     </Container>
     <Footer />
   </>

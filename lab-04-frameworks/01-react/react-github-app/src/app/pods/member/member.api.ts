@@ -1,4 +1,4 @@
-import { MemberEntity, createDefaultMemberEntity } from "./member";
+import { MemberEntity, createDefaultMemberEntity } from "./member.model";
 
 class MemberAPI {
   // Just return a copy of the mock data
@@ -30,7 +30,7 @@ class MemberAPI {
 
       member.id = gitHubMember.id;
       member.login = gitHubMember.login;
-      member.avatarUrl = gitHubMember.avataUrl;
+      member.avatar_url = gitHubMember.avata_url;
 
       return member;
     });

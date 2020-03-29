@@ -1,0 +1,55 @@
+.search {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin: $xl-size auto;
+}
+
+.search__label {
+  display: block;
+  padding: $xs-size $l-size;
+  font-size: $l-size;
+  color: $gray;
+  transition: all 0.4s ease-in-out;
+}
+
+.search__input {
+  width: 100%;
+  border-radius: $xxl-size;
+  height: 3.25rem;
+  border: 1px solid darken($gray-light, 10%);
+  padding: $l-size;
+  transition: all 0.4s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border: 1px solid darken($gray-light, 25%);
+  }
+}
+
+.search__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: $xxs-size;
+  border-radius: 50%;
+  border: 0;
+  background-color: $white;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background-color: darken($gray-light, 5%);
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search__icon {
+  fill: $gray;
+  width: $xl-size;
+}

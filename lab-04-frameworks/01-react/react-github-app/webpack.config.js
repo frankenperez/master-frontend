@@ -10,6 +10,7 @@ module.exports = {
     extensions: [".js", ".ts", ".tsx"],
     alias: {
       "app-common": path.join(basePath, "src/app/common"),
+      "app-icons": path.join(basePath, "src/assets/icons"),
       "app-layout": path.join(basePath, "src/app/layout"),
       "app-pods": path.join(basePath, "src/app/pods"),
       "app-scenes": path.join(basePath, "src/app/scenes")
@@ -63,12 +64,16 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif)$/,
         exclude: /node_modules/,
         loader: "file-loader",
         options: {
           name: "assets/img/[name].[ext]?[hash]"
         }
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"]
       }
     ]
   },

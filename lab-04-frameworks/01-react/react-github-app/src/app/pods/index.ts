@@ -1,1 +1,2 @@
-export * from "./members/membersTable";
+export * from "./member/memberList";
+export * from "./member/memberSearch";
