@@ -10,6 +10,8 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "camelcase": "off",
+    "@typescript-eslint/camelcase": ["error", { "properties": "never" }],
     "@typescript-eslint/no-var-requires": 0
   },
   "settings": {
