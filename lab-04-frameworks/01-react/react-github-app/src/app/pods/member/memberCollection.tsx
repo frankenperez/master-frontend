@@ -7,12 +7,18 @@ export const MemberListContainer = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
   const [user, setUser] = React.useState<UserEntity>();
 
+  const clearUser = () => setUser(null);
+
   const loadMembersFromAPI = (organizationName: string) => {
     if (organizationName.length > 0) {
       gitHubAPI.getMembersByOrganization(organizationName).then((response) => {
         setMembers(response);
       });
     }
+  };
+
+  const loadMembersByOrganization = (organizationName: string) => {
+    loadMembersFromAPI(organizationName);
   };
 
   const loadUserFromAPI = (userName: string) => {
@@ -23,10 +29,6 @@ export const MemberListContainer = () => {
     }
   };
 
-  const loadMembersByOrganization = (organizationName: string) => {
-    loadMembersFromAPI(organizationName);
-  };
-
   const loadUserByName = (userName: string) => {
     loadUserFromAPI(userName);
   };
@@ -35,6 +37,7 @@ export const MemberListContainer = () => {
     <>
       <MemberSearch loadMembersByOrganization={loadMembersByOrganization} />
       <MemberList
+        clearUser={clearUser}
         members={members}
         loadUserByName={loadUserByName}
         user={user}

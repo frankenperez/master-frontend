@@ -3,18 +3,19 @@ export interface MemberEntity {
   login: string;
   avatar_url: string;
   html_url: string;
-  repos_url: string;
 }
 
-export interface UserEntity extends MemberEntity {
+export interface UserEntity {
+  id: number;
+  login: string;
+  avatar_url: string;
+  html_url: string;
   company: string;
   blog: string;
   location: string;
   bio: string;
   public_repos: number;
-  public_gists: number;
   followers: number;
-  following: number;
 }
 
 export interface MemberAPIResponse {
@@ -38,13 +39,10 @@ export const createDefaultUserEntity = () => ({
   login: "",
   avatar_url: "",
   html_url: "",
-  repos_url: "",
   company: "",
   blog: "",
   location: "",
   bio: "",
   public_repos: 0,
-  public_gists: 0,
   followers: 0,
-  following: 0,
 });

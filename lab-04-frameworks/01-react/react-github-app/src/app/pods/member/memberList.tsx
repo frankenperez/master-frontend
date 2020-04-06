@@ -4,9 +4,10 @@ import { MemberListItem } from "./memberListItem";
 import { MemberListDetail } from "./memberListDetail";
 
 interface Props {
+  clearUser: () => void;
   loadUserByName(userName: string);
   members: MemberEntity[];
-  user: UserEntity;
+  user: UserEntity | null;
 }
 
 export const MemberList = (props: Props) => {
@@ -35,7 +36,7 @@ export const MemberList = (props: Props) => {
           </div>
         )}
       </section>
-      {props.user && <MemberListDetail user={props.user} />}
+      {props.user && <MemberListDetail clearUser={props.clearUser} user={props.user} />}
     </>
   );
 };

@@ -42,7 +42,6 @@ class GitHubAPI {
       member.login = gitHubMember.login;
       member.avatar_url = gitHubMember.avatar_url;
       member.html_url = gitHubMember.html_url;
-      member.repos_url = gitHubMember.repos_url;
       return member;
     });
     return Promise.resolve(members);
@@ -54,14 +53,12 @@ class GitHubAPI {
     user.login = data.login;
     user.avatar_url = data.avatar_url;
     user.html_url = data.html_url;
-    user.repos_url = data.repos_url;
     user.company = data.company;
     user.blog = data.blog;
     user.location = data.location;
     user.bio = data.bio;
     user.public_repos = data.public_repos;
     user.followers = data.followers;
-    user.following = data.following;
     return Promise.resolve(user);
   }
 }

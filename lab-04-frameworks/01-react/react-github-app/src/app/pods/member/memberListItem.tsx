@@ -25,9 +25,9 @@ export const MemberListItem = (props: Props) => {
       </div>
       <div className="list-item__content">
         <h3 className="list-item__username">{props.member.login}</h3>
-        <div className="list-item__buttons">
+        <div className="list__buttons">
           <a onClick={handleUserClick} title="View User Detail">
-            <IconUser className="list-item__icon" />
+            <IconUser className="list__icon" />
           </a>
           <a
             href={props.member.html_url}
@@ -35,7 +35,7 @@ export const MemberListItem = (props: Props) => {
             target="_blank"
             title="Go to GitHub User Page"
           >
-            <IconLink className="list-item__icon" />
+            <IconLink className="list__icon" />
           </a>
         </div>
       </div>
