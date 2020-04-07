@@ -17,13 +17,14 @@
   width: 100%;
   border-radius: $xxl-size;
   height: 3.25rem;
-  border: 1px solid darken($gray-light, 10%);
+  border: $border;
+  border-color: darken($gray-light, 10%);
   padding: $l-size;
   transition: all 0.4s ease-in-out;
 
   &:focus {
     outline: none;
-    border: 1px solid darken($gray-light, 25%);
+    border-color: darken($gray-light, 25%);
   }
 
   &::placeholder {

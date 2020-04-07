@@ -16,8 +16,8 @@
   height: fit-content;
   max-height: 96%;
   background-color: $white;
-  border: 1px solid $gray;
-  border-radius: $xxs-size;
+  border: $border;
+  border-radius: $border-radius;
   -webkit-overflow-scrolling: touch;
   // Prevent Chrome on Windows from adding a focus outline
   outline: 0;

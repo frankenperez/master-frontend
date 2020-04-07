@@ -5,7 +5,7 @@ $breakpoints: (
   "small": 320px,
   "medium": 768px,
   "large": 1024px,
-  "x-large": 1220px
+  "x-large": 1220px,
 ) !default;
 
 /// Font sizes
@@ -38,3 +38,10 @@ $gray-light: #fafbfc !default;
 $blue: #0366d6 !default;
 $blue-dark: #044289 !default;
 $blue-light: #dbedff !default;
+
+// Border
+$border-width: 1px !default;
+$border-style: solid !default;
+$border-color: lighten($gray, 25%) !default;
+$border-radius: $xxs-size !default;
+$border: $border-width $border-style $border-color !default;

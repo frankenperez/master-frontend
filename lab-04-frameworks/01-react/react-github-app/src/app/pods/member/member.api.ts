@@ -6,8 +6,19 @@ import {
 } from "./member.model";
 
 class GitHubAPI {
-  getMembersByOrganization(organizationName: string): Promise<MemberEntity[]> {
-    const gitHubMembersUrl = `https://api.github.com/orgs/${organizationName}/members`;
+  getMembersByOrganization(
+    organizationName: string,
+    page = 1,
+    perPage = 30
+  ): Promise<MemberEntity[]> {
+    let gitHubMembersUrl = `https://api.github.com/orgs/${organizationName}/members`;
+    if (page > 0) {
+      gitHubMembersUrl += `?page=${page}`;
+    }
+    if (perPage > 0) {
+      gitHubMembersUrl += `&per_page=${perPage}`;
+    }
+
     return fetch(gitHubMembersUrl)
       .then((response) => this.checkStatus(response))
       .then((response) => this.parseJSON(response))

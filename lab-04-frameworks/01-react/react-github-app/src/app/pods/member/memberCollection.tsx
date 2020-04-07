@@ -4,19 +4,28 @@ import { gitHubAPI } from "./member.api";
 import { MemberList, MemberSearch } from "app-pods";
 
 export const MemberListContainer = () => {
+  const [error, setError] = React.useState<boolean>(false);
   const [loading, setLoading] = React.useState<boolean>(true);
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
-  const [user, setUser] = React.useState<UserEntity>();
   const [organizationName, setOrganizationName] = React.useState("reactjs");
+  const [page, setPage] = React.useState(1);
+  const [user, setUser] = React.useState<UserEntity>();
 
   // Member and User Fetching
-  const loadMembersFromAPI = (organizationName: string) => {
+  const loadMembersFromAPI = (organizationName: string, page: number) => {
     if (organizationName.length > 0) {
       setLoading(true);
-      gitHubAPI.getMembersByOrganization(organizationName).then((response) => {
-        setMembers(response);
-        setLoading(false);
-      });
+      gitHubAPI.getMembersByOrganization(organizationName, page).then(
+        (response) => {
+          setMembers(members.concat(response));
+          setLoading(false);
+          setError(false);
+        },
+        () => {
+          setLoading(false);
+          setError(true);
+        }
+      );
     }
   };
 
@@ -28,6 +37,12 @@ export const MemberListContainer = () => {
     }
   };
 
+  // Members Pagination
+  const loadNextPage = () => {
+    loadMembersFromAPI(organizationName, page + 1);
+    setPage(page + 1);
+  };
+
   // Handling Search Form Actions
   const changeOrganizationName = (e: React.ChangeEvent<HTMLInputElement>) =>
     setOrganizationName(e.target.value);
@@ -35,15 +50,23 @@ export const MemberListContainer = () => {
   const resetOrganizationName = (e: React.FormEvent<HTMLFormElement>) => {
     setOrganizationName("");
     setMembers([]);
+    setPage(1);
   };
 
   const submitOrganizationName = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    loadMembersFromAPI(organizationName);
+    setMembers([]);
+    setPage(1);
+    loadMembersFromAPI(organizationName, page);
   };
 
   // Handling List Detail
   const clearUser = () => setUser(null);
+
+  // Fetching members on mount using the default organization name
+  React.useEffect(() => {
+    loadMembersFromAPI(organizationName, page);
+  }, []);
 
   return (
     <>
@@ -55,8 +78,9 @@ export const MemberListContainer = () => {
       />
       <MemberList
         clearUser={clearUser}
+        error={error}
         loading={loading}
-        loadMembersByOrganization={loadMembersFromAPI}
+        loadNextPage={loadNextPage}
         loadUserByName={loadUserFromAPI}
         members={members}
         user={user}
