@@ -5,12 +5,17 @@ import { MemberListDetail } from "./memberListDetail";
 
 interface Props {
   clearUser: () => void;
+  loading: boolean;
+  loadMembersByOrganization(organizationName: string);
   loadUserByName(userName: string);
   members: MemberEntity[];
   user: UserEntity | null;
 }
 
 export const MemberList = (props: Props) => {
+
+  const bottomListRef = React.useRef(null);
+
   return (
     <>
       <section className="member-list">
@@ -26,6 +31,9 @@ export const MemberList = (props: Props) => {
                 loadUserByName={props.loadUserByName}
               />
             ))}
+            <div className="list-bottom-boundary" ref={bottomListRef}>
+              {props.loading && <p className="">Getting members...</p>}
+            </div>
           </div>
         ) : (
           <div className="list__message">
@@ -36,7 +44,9 @@ export const MemberList = (props: Props) => {
           </div>
         )}
       </section>
-      {props.user && <MemberListDetail clearUser={props.clearUser} user={props.user} />}
+      {props.user && (
+        <MemberListDetail clearUser={props.clearUser} user={props.user} />
+      )}
     </>
   );
 };

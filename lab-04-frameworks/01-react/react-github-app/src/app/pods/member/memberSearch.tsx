@@ -1,33 +1,23 @@
 import * as React from "react";
 import { SearchBox } from "app-common";
-import { MemberEntity } from "./member.model";
 
 interface Props {
-  loadMembersByOrganization(organizationName: string);
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onReset: (event: React.FormEvent<HTMLFormElement>) => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  value: string;
 }
 
 export const MemberSearch = (props: Props) => {
-  const [organizationName, setOrganizationName] = React.useState("reactjs");
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setOrganizationName(e.target.value);
-
-  const onReset = (e: React.FormEvent<HTMLFormElement>) => setOrganizationName("");
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    props.loadMembersByOrganization(organizationName);
-  };
-
   return (
     <>
       <SearchBox
-        label="Search an Organization"
-        onChange={onChange}
-        onReset={onReset}
-        onSubmit={onSubmit}
+        label="Search Organization"
+        onChange={props.onChange}
+        onReset={props.onReset}
+        onSubmit={props.onSubmit}
         placeholder="Start typing a name..."
-        value={organizationName}
+        value={props.value}
       />
     </>
   );

@@ -5,21 +5,21 @@
     "moduleResolution": "node",
     "declaration": false,
     "noImplicitAny": false,
-    "sourceMap": true,
     "jsx": "react",
+    "outDir": "",
+    "sourceMap": true,
     "noLib": false,
-    "allowJs": true,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "app-common": ["src/app/common"],
-      "app-icons": ["src/assets/icons"],
-      "app-layout": ["src/app/layout"],
-      "app-pods": ["src/app/pods"],
-      "app-scenes": ["src/app/scenes"]
+      "app-common": ["app/common"],
+      "app-icons": ["assets/icons"],
+      "app-layout": ["app/layout"],
+      "app-pods": ["app/pods"],
+      "app-scenes": ["app/scenes"]
     }
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
