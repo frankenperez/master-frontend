@@ -3,11 +3,13 @@ import { MemberEntity, UserEntity } from "./member.model";
 import { MemberListItem } from "./memberListItem";
 import { MemberListDetail } from "./memberListDetail";
 import IconError from "app-icons/error-icon.svg";
+import IconLoading from "app-icons/loading-icon.svg";
 import IconWarning from "app-icons/warning-icon.svg";
 
 interface Props {
   clearUser: () => void;
   error: boolean;
+  final: boolean;
   loading: boolean;
   loadNextPage();
   loadUserByName(userName: string);
@@ -66,8 +68,15 @@ export const MemberList = (props: Props) => {
                     loadUserByName={props.loadUserByName}
                   />
                 ))}
-                {props.loading && <p className="">Getting members...</p>}
-                <div className="list__end" ref={endListRef}></div>
+                {props.loading && (
+                  <div className="list__loading">
+                    <IconLoading className="list__loading__icon"/>
+                    <p>Getting members...</p>
+                  </div>
+                )}
+                {!props.final && (
+                  <div className="list__end" ref={endListRef}></div>
+                )}
               </div>
             ) : (
               <div className="list__message list__message--empty">
