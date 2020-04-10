@@ -1,0 +1,8 @@
+@import "abstracts/variables";
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: $black;
+  color: $white;
+}

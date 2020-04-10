@@ -1,12 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-
 import { MemberEntity } from "../models/member.model";
 import { MembersApiService } from "../members-api.service";
 
 @Component({
   selector: "app-members-table",
   templateUrl: "./members-table.component.html",
-  styles: [],
+  styleUrls: ["./members-table.component.scss"],
 })
 export class MembersTableComponent implements OnInit {
   members: MemberEntity[];

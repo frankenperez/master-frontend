@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatIconModule } from "@angular/material/icon";
 
 import {
   MemberRowComponent,
@@ -10,7 +11,13 @@ import {
 } from "./members-table";
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule
+  ],
   declarations: [
     MemberRowComponent,
     MemberHeadComponent,

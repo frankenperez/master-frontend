@@ -1,8 +1,26 @@
-<h2>Organization Members</h2>
-<input type="text" [(ngModel)]="organizationName" />
-<button (click)="loadMembers()">Search</button>
+<div class="search">
+  <label class="search__label">Search an Organization</label>
+  <input
+    class="search__input"
+    type="text"
+    [(ngModel)]="organizationName"
+    placeholder="Start typing a name..."
+  />
+  <div class="search__butons">
+    <button class="search__submit" (click)="loadMembers()">
+      <mat-icon
+        class="search__button__icon"
+        aria-hidden="false"
+        aria-label="Search"
+        >search</mat-icon
+      >
+    </button>
+  </div>
+</div>
+
+<h2 className="text-center">Organization Members</h2>
 <table>
-  <thead app-member-header></thead>
+  <thead app-member-head></thead>
   <tbody>
     <tr app-member-row [member]="member" *ngFor="let member of members"></tr>
   </tbody>
