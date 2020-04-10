@@ -1,9 +1,9 @@
-<h2>Members Page</h2>
-<button (click)="loadMembers()">Load</button>
+<h2>Organization Members</h2>
+<input type="text" [(ngModel)]="organizationName" />
+<button (click)="loadMembers()">Search</button>
 <table>
-  <thead app-member-head></thead>
+  <thead app-member-header></thead>
   <tbody>
-    <tr app-member-row [member]="member" *ngFor="let member of members">
-    </tr>
+    <tr app-member-row [member]="member" *ngFor="let member of members"></tr>
   </tbody>
 </table>

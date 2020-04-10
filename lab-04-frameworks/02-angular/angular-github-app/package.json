@@ -1,5 +1,5 @@
 {
-  "name": "angular-exercise",
+  "name": "angular-github-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -16,6 +16,7 @@
     "@angular/compiler": "~8.2.13",
     "@angular/core": "~8.2.13",
     "@angular/forms": "~8.2.13",
+    "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",

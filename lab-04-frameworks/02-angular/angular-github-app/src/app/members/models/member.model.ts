@@ -3,4 +3,3 @@ export interface MemberEntity {
   login: string;
   avatar_url: string;
 }
-
