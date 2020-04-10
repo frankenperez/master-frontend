@@ -18,10 +18,7 @@
   </div>
 </div>
 
-<h2 className="text-center">Organization Members</h2>
-<table>
-  <thead app-member-head></thead>
-  <tbody>
-    <tr app-member-row [member]="member" *ngFor="let member of members"></tr>
-  </tbody>
-</table>
+<h2 class="text-center">Organization Members</h2>
+<div class="members-list">
+  <div app-member-item [member]="member" *ngFor="let member of members"></div>
+</div>

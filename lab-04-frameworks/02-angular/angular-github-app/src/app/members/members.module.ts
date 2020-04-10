@@ -4,11 +4,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material/icon";
 
-import {
-  MemberRowComponent,
-  MemberHeadComponent,
-  MembersTableComponent,
-} from "./members-table";
+import { MemberItemComponent, MembersListComponent } from "./members-list";
 
 @NgModule({
   imports: [
@@ -16,13 +12,9 @@ import {
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
   ],
-  declarations: [
-    MemberRowComponent,
-    MemberHeadComponent,
-    MembersTableComponent,
-  ],
-  exports: [MembersTableComponent],
+  declarations: [MemberItemComponent, MembersListComponent],
+  exports: [MembersListComponent],
 })
 export class MembersModule {}

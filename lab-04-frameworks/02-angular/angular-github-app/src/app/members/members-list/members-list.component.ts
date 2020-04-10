@@ -3,17 +3,18 @@ import { MemberEntity } from "../models/member.model";
 import { MembersApiService } from "../members-api.service";
 
 @Component({
-  selector: "app-members-table",
-  templateUrl: "./members-table.component.html",
-  styleUrls: ["./members-table.component.scss"],
+  selector: "app-members-list",
+  templateUrl: "./members-list.component.html",
+  styleUrls: ["./members-list.component.scss"],
 })
-export class MembersTableComponent implements OnInit {
+export class MembersListComponent implements OnInit {
   members: MemberEntity[];
   organizationName = "";
 
   constructor(private membersApi: MembersApiService) {
     this.organizationName = "angular";
   }
+
   ngOnInit() {
     this.loadMembers();
   }
