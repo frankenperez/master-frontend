@@ -27,7 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.13.1",
-    "parcel": "^1.12.4",
+    "parcel": "^2.8.2",
     "sass": "^1.26.3"
   }
 }
